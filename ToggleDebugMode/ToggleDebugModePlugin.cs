@@ -153,7 +153,6 @@ namespace eradev.stolenrealm.ToggleDebugMode
             DebugWindow.Instance.ForceProfessionToggle.isOn = false;
             DebugWindow.Instance.ForceDestructibleToggle.isOn = false;
             DebugWindow.Instance.ForceEnemyModToggle.isOn = false;
-            DebugWindow.Instance.NeverExpendEventsToggle.isOn = false;
             DebugWindow.Instance.HideTextEventsToggle.isOn = false;
             DebugWindow.Instance.HideHealthbarsToggle.isOn = false;
             DebugWindow.Instance.HideHexBordersToggle.isOn = false;

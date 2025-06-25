@@ -45,7 +45,7 @@ namespace eradev.stolenrealm.StatPoints
 
                     GlobalSettingsManager.instance.globalSettings.NumStatsPerNewLevel = newValue;
 
-                    GUIManager.instance.UpdateUnspentPointsUI();
+                    //GUIManager.instance.UpdateUnspentPointsUI();
 
                     CommandHandler.DisplayMessage($"Successfully set the stat points per level to {newValue}", PluginInfo.PLUGIN_NAME);
                 }

@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>eradev.stolenrealm.CommandHandler</AssemblyName>
     <Description>Handles chat commands from other mods.</Description>
     <Version>1.2.1</Version>
@@ -16,7 +16,7 @@
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
-    <PackageReference Include="UnityEngine.Modules" Version="2020.3.23" IncludeAssets="compile" />
+    <PackageReference Include="UnityEngine.Modules" Version="2022.3.10" IncludeAssets="compile" />
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
@@ -25,17 +25,17 @@
   
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>F:\SteamLibrary\steamapps\common\Stolen Realm\Stolen Realm_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stolen Realm\Stolen Realm_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization">
-      <HintPath>F:\SteamLibrary\steamapps\common\Stolen Realm\Stolen Realm_Data\Managed\Sirenix.Serialization.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stolen Realm\Stolen Realm_Data\Managed\Sirenix.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:\SteamLibrary\steamapps\common\Stolen Realm\Stolen Realm_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stolen Realm\Stolen Realm_Data\Managed\Unity.TextMeshPro.dll</HintPath>
     </Reference>
   </ItemGroup>
   
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;F:\SteamLibrary\steamapps\common\Stolen Realm\BepInEx\plugins\$(TargetFileName)&quot;" />
+    <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;D:\SteamLibrary\steamapps\common\Stolen Realm\BepInEx\plugins\$(TargetFileName)&quot;" />
   </Target>
 </Project>
