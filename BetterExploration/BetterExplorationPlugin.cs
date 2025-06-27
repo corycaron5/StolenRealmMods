@@ -11,12 +11,12 @@ namespace eradev.stolenrealm.BetterExploration
     public class BetterExplorationPlugin : BaseUnityPlugin
     {
         // ReSharper disable once NotAccessedField.Global
-        public static ManualLogSource Log;
+        public static ManualLogSource LOG;
 
         [UsedImplicitly]
         private void Awake()
         {
-            Log = Logger;
+            LOG = Logger;
 
             BetterTreasures.Register(Config);
             CustomizedMovementSpeed.Register(Config);

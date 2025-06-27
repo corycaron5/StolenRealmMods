@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using BepInEx.Configuration;
+using BepInEx.Logging;
 using eradev.stolenrealm.CommandHandlerNS;
 using HarmonyLib;
 using JetBrains.Annotations;
@@ -133,13 +134,13 @@ namespace eradev.stolenrealm.BetterExploration.Features
                         OptionsManager.Localize("Perfect!"),
                         items,
                         oreVein.OkayAmount * 4,
-                        ShakeIntensity.Medium,
+                        ShakeIntensity.Light,
                         ProfessionType.Mining,
                         ___currentProfessionHex,
                         oreVein.successEffect,
                         oreVein.NumCharges,
                         0.85f,
-                        ___professionPlayer.GetRandomAttackSound(),
+                        ___professionPlayer.GetRandomAttackSound().audioClip,
                         0.25f
                     }) as IEnumerator;
 

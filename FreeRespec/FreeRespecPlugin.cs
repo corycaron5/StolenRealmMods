@@ -33,17 +33,20 @@ namespace eradev.stolenrealm.FreeRespec
                 if (command.Name.Equals(_cmdToggle.Value))
                 {
                     _isDisabled.Value = !_isDisabled.Value;
-
+                    GlobalSettingsManager.instance.globalSettings.respecCostPerLevel = _isDisabled.Value ? 500 : 0;
+                    
                     CommandHandler.DisplayMessage($"Successfully {(_isDisabled.Value ? "disabled" : "enabled")}", PluginInfo.PLUGIN_NAME);
                 }
             };
 
-            new Harmony(PluginInfo.PLUGIN_GUID).PatchAll();
+            //new Harmony(PluginInfo.PLUGIN_GUID).PatchAll();
+            
+            GlobalSettingsManager.instance.globalSettings.respecCostPerLevel = _isDisabled.Value ? 500 : 0;
 
             Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
         }
 
-        [HarmonyPatch(typeof(SkillRefundManager), "RespecCost", MethodType.Getter)]
+        /*[HarmonyPatch(typeof(SkillRefundManager), "RespecCost", MethodType.Getter)]
         public class SkillRefundManagerRespecCostPatch
         {
             [UsedImplicitly]
@@ -56,6 +59,6 @@ namespace eradev.stolenrealm.FreeRespec
 
                 __result = 0.0f;
             }
-        }
+        }*/
     }
 }
